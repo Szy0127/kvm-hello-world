@@ -11,8 +11,8 @@ __attribute__((section(".start")))
 _start(void) {
 	const char *p;
 
-	for (p = "Hello, world!\n"; *p; ++p)
-		outb(0xE9, *p);
+	for (p = "Hello, world! from vm\n"; *p; ++p)
+		outb(0xEA, *p);
 
 	*(long *) 0x400 = 42;
 
