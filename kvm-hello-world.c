@@ -198,7 +198,7 @@ int run_vm(struct vm *vm, struct vcpu *vcpu, size_t sz)
 		return 0;
 	}
 
-	memcpy(&memval, &vm->mem[0x400], sz);
+	memcpy(&memval, &vm->mem[0x10000], sz);
 	if (memval != 42) {
 		printf("Wrong result: memory at 0x400 is %lld\n",
 		       (unsigned long long)memval);

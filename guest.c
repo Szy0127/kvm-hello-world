@@ -14,7 +14,8 @@ _start(void) {
 	for (p = "Hello, world! from vm\n"; *p; ++p)
 		outb(0xEA, *p);
 
-	*(long *) 0x400 = 42;
+	//can see ept_violation 
+	*(long *) 0x10000 = 42;
 
 	for (;;)
 		asm("hlt" : /* empty */ : "a" (42) : "memory");
